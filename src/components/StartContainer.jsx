@@ -1,23 +1,40 @@
-import React from 'react'
+import React from 'react';
+import startPicture from '../assets/StartPicture.jpg';
+import { Button } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-const StartContainer = () => {
+const DivContainer = () => {
   return (
-    <div style={{
-        background:'linear-gradient(to right, rgb(230, 230, 230) 50%, green 100%)',
-        height:'400px'
-    }}>
-       <div style={{paddingLeft:20, paddingTop:50, }}>
-        <h1> Wir sind <span style={{color:'green'}}> für Sie da</span> <br />
-        wenn es darauf <br />
-        ankommt. <br /></h1>
-        <h4>Wir sind die LVM Agentur  Ranft & Team</h4>
-       </div>
-       <div>
-       <button style={{backgroundColor:'black', color:'white', paddingLeft:10,paddingRight:10, paddingTop:5, paddingBottom:5, borderRadius:'10px', marginLeft:'10px'}}>Kontakt </button>
-       <span>mehr Über Uns</span>
-        </div>
+    <div style={{ position: 'relative' }}>
+      <img src={startPicture} width="100%" alt='picture' />
+      <div style={{ position: 'absolute', top: '70%', left: '20%', transform: 'translate(-50%, -50%)', display: 'flex', alignItems: 'center' }}>
+        <Button
+          style={{ marginRight: '10px', backgroundColor: 'black', color:'white', width:'100px', height:'28px' }}
+          endIcon={<ArrowForwardIcon style={{ color: 'white' }} />}
+          onMouseEnter={(e) => {
+            e.target.style.backgroundColor = 'green';
+            e.target.querySelector('svg').style.color = 'white';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.backgroundColor = 'black';
+            e.target.querySelector('svg').style.color = 'white';
+          }}
+        >
+          Kontakt
+        </Button>
+        <h5 style={{ margin: '0', paddingLeft: '10px' }}>
+          <a
+            href="#"
+            style={{ color: 'black', textDecoration: 'none' }}
+            onMouseEnter={(e) => e.target.style.color = 'green'}
+            onMouseLeave={(e) => e.target.style.color = 'black'}
+          >
+            mehr über uns
+          </a>
+        </h5>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default StartContainer
+export default DivContainer;

@@ -1,51 +1,61 @@
 import React, { useState } from 'react';
-import '../styles/Topbar.css'; // Stile für die Top-Bar
-import logo from '../assets/logo.png'
-const TopBar = () => {
-  const [showMenu, setShowMenu] = useState(false);
+import './Topbar.css';
+import logo from '../assets/logo.png';
+import { useMediaQuery } from '@react-hook/media-query';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
+const Navbar = () => {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const renderLinks = () => {
-    if (showMenu) {
-      return (
-        <div className="menu-links">
-          <a href="#">Start</a>
-          <a href="#">Kontakt</a>
-          <a href="#">Referenzen</a>
-          <a href="#">Über uns</a>
-          <a href="#">Rezensionen</a>
-        </div>
-      );
-    }
-    return null;
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <div className="top-bar">
-      <div className="left-links">
-        <a href="#">Start</a>
-        <a href="#">Kontakt</a>
-        <a href="#">Referenzen</a>
-        <a href="#">Über uns</a>
-        <a href="#">Rezensionen</a>
-      </div>
-      <div className="logo">
-        <img src={logo} alt="LVM Versicherung" />
-      </div>
-      <div className="right-button">
-        <button onClick={() => console.log('Jetzt In Kontakt treten')}>
-          Jetzt In Kontakt treten
-        </button>
-      </div>
-      <div className="burger-menu" onClick={toggleMenu}>
-        <div className={`burger ${showMenu ? 'open' : ''}`} />
-      </div>
-      {renderLinks()}
-    </div>
+    <nav>
+      {isMobile ? (
+        <React.Fragment>
+          <div className="logo">
+            <img src={logo} alt="Logo" />
+          </div>
+          <div className="menu-icon" onClick={handleMenuToggle}>
+           {isMenuOpen ? (
+            <CloseIcon />
+           )
+            : 
+           (
+           <MenuIcon />
+           )}
+           </div>
+          {isMenuOpen && (
+            <ul className="links-mobile">
+              <li><a href="/">Start</a></li>
+              <li><a href="/about">Kontakt</a></li>
+              <li><a href="/services">Über uns</a></li>
+              <li><a href="/contact">Rezensionen</a></li>
+            </ul>
+          )}
+        </React.Fragment>
+      ) : (
+        <React.Fragment>
+          <ul className="links">
+            <li><a href="/">Start</a></li>
+            <li><a href="/about">Kontakt</a></li>
+            <li><a href="/services">Über uns</a></li>
+            <li><a href="/contact">Rezensionen</a></li>
+          </ul>
+          <div className="logo">
+            <img src={logo} alt="Logo" />
+          </div>
+          <div className="contact-button">
+            <button>Jetzt in Kontakt treten</button>
+          </div>
+        </React.Fragment>
+      )}
+    </nav>
   );
 };
 
-export default TopBar;
+export default Navbar;
