@@ -5,7 +5,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import { useMediaQuery } from '@react-hook/media-query';
-import { Button, Input, colors } from "@mui/material";
+import { Button, Input } from "@mui/material";
 
 
 const containerStyles = {
@@ -13,6 +13,15 @@ const containerStyles = {
   justifyContent: "center",
   gap: "32px",
 };
+
+const containerStylesMobile = {
+  display: "flex",
+  flexDirection: "column", // Neu: Container werden untereinander angeordnet
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "32px",
+};
+
 
 const contactDivStyles = {
   width: "150px",
@@ -29,6 +38,23 @@ const contactDivStyles = {
     backgroundColor: '#00B200',
   },
 };
+
+const contactDivStylesMobile = {
+  width: "150px",
+  height: "200px",
+  borderRadius: "19px",
+  backgroundColor: "white",
+  display: "flex",
+  justifyContent: "center", // Zentriert horizontal
+  alignItems: "center", // Zentriert vertikal
+  textAlign: "center",
+  padding: "16px",
+  transition: "background-color 0.3s ease",
+  "&:hover": {
+    backgroundColor: "#00B200",
+  },
+};
+
 
 const contact1Style = {
   width: "150px",
@@ -76,7 +102,7 @@ const [emailAdresse, setEmailAdresse] = useState('');
 const [telefonnummer, setTelefonnummer] = useState('')
 const [isTerminauswahl2, setIsTerminauswahl2] = useState('');
 
-const LVMNumber = '+49 (0)421 1651670'
+const LVMNumber = '+49 (0)421 1651670';
   useEffect(() => {
     setCanCall(!!navigator.userAgent.match(/Android|iPhone|iPad|iPod/i));
   }, []);
@@ -162,6 +188,167 @@ setIsVielenDank(true)
   return (  
     <div className="kontakt" id="kontakt" >
       <h3 style={{textAlign:'center'}}>Was möchten Sie tun?</h3>
+{isMobile && (
+  <div>
+     <Box sx={containerStylesMobile}>
+      {/* div 1 */}
+      {isStart && (
+           <Box sx={contactDivStyles} onClick={handleClick1}>
+           <span style={{ alignSelf: 'flex-start',marginLeft:5, marginTop:'10px'  }}><PhoneOutlinedIcon /></span>
+           <span style={{ alignSelf: 'flex-start',marginLeft:20 }}>
+             <h4>Telefonisch kontaktieren</h4></span>
+           <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon /></span>
+         </Box>
+        )}
+       {is1Open && (
+           <div>
+            {!canCall && (
+              <Box sx={contact1StyleDisabled}  >
+           Anrufen
+           <h6> Bitte zu einem Mobilgerät wechseln</h6>
+
+           </Box>
+            )}
+
+            {canCall && (
+              <Box sx={contact1Style} onClick={handleCall}  >
+           Anrufen
+           </Box>
+            )}
+           
+             <Box sx={contact1Style} onClick={handleWirRufenSieAn}>
+            Wir rufen Sie an
+            </Box>
+            </div>  
+        )}
+        {isWirRufenAn && (
+           <Box sx={contactDivStyles} onClick={handleClick2}>
+            <div>
+              <span><h4>Damit wir Sie erreichen </h4></span>
+              <span>
+              <form onSubmit={sendEmailWithTelefonNummer}>
+                <Input
+                type="text"
+                required
+                placeholder="Ihre Telefonnummer"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                /> <br /> <br />
+                <Button type="submit" variant="contained" color="success">Weiter</Button>
+                <br />
+              </form>
+              </span>
+            </div>
+         </Box>
+        )}
+         {isVielenDank && (
+           <Box sx={contactDivStyles} onClick={handleClick1}>
+           <span style={{ alignSelf: 'flex-start',marginLeft:5, marginTop:'10px'  }}><PhoneOutlinedIcon /></span>
+           <span style={{ alignSelf: 'flex-start',marginLeft:20 }}>
+             <h4>Telefonisch kontaktieren</h4></span>
+           <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon /></span>
+         </Box>
+        )}
+
+        {/* div2 */}
+        <Box sx={contactDivStyles} onClick={handlePerNachricht}>
+          <span style={{ alignSelf: 'flex-start', marginLeft:5, paddingTop:10  }}><EmailOutlinedIcon /></span>
+          <span style={{ alignSelf: 'flex-start',marginLeft:20 }}>
+            <h4>Per Nachricht kontaktieren</h4></span>
+          <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon /></span>
+        </Box>
+
+
+        {/* div3 */}
+
+        {isStartTermin && (
+          <Box sx={contactDivStyles} onClick={handleClickTermin1}>
+          <span style={{ alignSelf: 'flex-start',marginLeft:5, paddingTop:10  }}><CalendarMonthOutlinedIcon /></span>
+          <span style={{ alignSelf: 'flex-start',marginLeft:20 }}>
+            <h4>Einen Termin vereinbaren</h4></span>
+          <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon /></span>
+        </Box>
+     
+        )}
+         {is1TerminOpen && (
+           <div>
+           
+              <Box sx={contact1Style} onClick={handleTagundUhrzeit}>
+          Ein Termin bei Ihnen
+          <h6 style={{color:'lightgray'}}>Ein Außendienstler besucht sie zu einem Gespräch.</h6>
+          </Box>
+          <Box sx={contact1Style} onClick={handleTagundUhrzeit}  >
+          Ein Termin bei Uns
+          <h6 style={{color:'lightgray'}}>Sie besuchen unsere Agentur für ein Gespräch.</h6>
+          </Box>
+            </div>  
+        )}
+        {isTagundUhrzeit && (
+           <Box sx={contactDivStyles}>
+            <span><h4>Terminauswahl</h4></span>
+            <span>
+            <form onSubmit={handleTerminauswahl2}>
+              <Input
+              type="date"
+              required
+              placeholder="Gewünschter Tag"
+              value={day}
+              onChange={(e) => setDay(e.target.value)}
+              />
+              <Input
+              type="text"
+              required
+              placeholder="Gewünschte Uhrzeit"
+              value={uhrzeit}
+              onChange={(e) => setUhrzeit(e.target.value)}
+              /> <br /> <br />
+              <Button type="submit" variant="contained" color="success">Weiter</Button>
+              <br />
+            </form>
+            </span>
+             </Box>
+)}
+          {isTerminauswahl2 && (
+             <Box sx={contactDivStyles}>
+             <span><h4>Ihre Kontaktdaten</h4></span>
+             <span>
+             <form onSubmit={sendEmailKontaktDaten}>
+               <Input
+               type="text"
+               required
+               placeholder="Vor- und Zuname"
+               value={vorUndNachname}
+               onChange={(e) => setVorundNachname(e.target.value)}
+               />
+               <Input
+               type="text"
+               required
+               placeholder="Telefonnummer"
+               value={telefonnummer}
+               onChange={(e) => setTelefonnummer(e.target.value)}
+               />
+                <Input
+               type="email"
+               required
+               placeholder="Email adresse"
+               value={emailAdresse}
+               onChange={(e) => setEmailAdresse(e.target.value)}
+               /> <br />
+               <Button type="submit" variant="contained" color="success">Weiter</Button>
+               <br />
+             </form>
+             </span>
+              </Box>
+          )}
+
+
+     </Box>
+  </div>
+ 
+)}
+
+
+{!isMobile && (
 
 
       <Box sx={containerStyles}>
@@ -323,6 +510,7 @@ setIsVielenDank(true)
 
 
          </Box>
+         )}
     </div>
   )}
   
