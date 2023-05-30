@@ -4,6 +4,8 @@ import logo from '../assets/logo.png';
 import { useMediaQuery } from '@react-hook/media-query';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import { Button } from '@mui/material';
 
 const Navbar = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -30,27 +32,37 @@ const Navbar = () => {
            )}
            </div>
           {isMenuOpen && (
-            <ul className="links-mobile">
+            <div>
+            <ul className="links-mobile"onClick={handleMenuToggle}>
               <li><a href="/">Start</a></li>
-              <li><a href="/about">Kontakt</a></li>
-              <li><a href="/services">Über uns</a></li>
-              <li><a href="/contact">Rezensionen</a></li>
+              <li><a href="#kontakt">Kontakt</a></li>
+              <li><a href="#referenzen">Referenzen</a></li>
+              <li><a href="#überuns">Über uns</a></li>
+              <li><a href="/stellenanzeigen">Stellenanzeigen</a></li>
+              <li><a href="#rezensionen">Rezensionen</a></li>
+             <br /> <br />
+             <li>Weitere Links:</li>
+             <li><a href="/impressum">Impressum</a></li>
+             <li><a href="/offenlegungspflicht">Offenlegungspflicht</a></li>
+             <li><a href="/datenschutz">Datenschutz</a></li>
+
             </ul>
+            </div>
           )}
         </React.Fragment>
       ) : (
         <React.Fragment>
           <ul className="links">
             <li><a href="/">Start</a></li>
-            <li><a href="/about">Kontakt</a></li>
-            <li><a href="/services">Über uns</a></li>
-            <li><a href="/contact">Rezensionen</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="#überuns">Über uns</a></li>
+            <li><a href="#rezensionen">Rezensionen</a></li>
           </ul>
           <div className="logo">
             <img src={logo} alt="Logo" />
           </div>
           <div className="contact-button">
-            <button>Jetzt in Kontakt treten</button>
+            <Button style={{color:'black', border: '1px solid black' }}  endIcon={<MailOutlineIcon />}>Jetzt in Kontakt treten  </Button>
           </div>
         </React.Fragment>
       )}

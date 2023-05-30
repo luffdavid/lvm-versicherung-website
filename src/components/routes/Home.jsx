@@ -5,7 +5,7 @@ import StartContainer from '../StartContainer';
 const Home = () => {
   return (
     <div>
-        <StartContainer />
+        {/* <StartContainer /> */}
         <ContactContainer />
     </div>
   )

@@ -13,12 +13,11 @@ const DivContainer = () => {
           endIcon={<ArrowForwardIcon style={{ color: 'white' }} />}
           onMouseEnter={(e) => {
             e.target.style.backgroundColor = 'green';
-            e.target.querySelector('svg').style.color = 'white';
+         
           }}
           onMouseLeave={(e) => {
             e.target.style.backgroundColor = 'black';
-            e.target.querySelector('svg').style.color = 'white';
-          }}
+         }}
         >
           Kontakt
         </Button>

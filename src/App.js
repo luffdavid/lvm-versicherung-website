@@ -2,6 +2,7 @@ import './App.css';
 import Home from './components/routes/Home';
 import {BrowserRouter, Routes, Route, Navigate, useLocation} from 'react-router-dom'
 import TopBar from './components/Topbar';
+import Stellenanzeigen from './components/routes/Stellenanzeigen';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
         />
           <Route
         path="/stellenanzeigen"
-        element={<Home />}
+        element={<Stellenanzeigen />}
         />
         </Routes>
         </BrowserRouter>
