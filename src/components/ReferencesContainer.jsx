@@ -14,7 +14,7 @@ const ReferencesContainer = () => {
       flexDirection: "column",
       alignItems: "center",
       padding: "16px",
-      width: '100%'
+    //   width: '100%'
     };
   
     const imageContainerStylesMobile = {
@@ -34,7 +34,7 @@ const ReferencesContainer = () => {
         justifyContent: "space-between",
         alignItems: "center",
         padding: "16px",
-      width: '100%'
+        // width: '100%'
 
       };
       
@@ -44,7 +44,7 @@ const ReferencesContainer = () => {
         margin: "0 70px", // Festlegen des Abstands zwischen den Bildern
       };
         return (
-      <div className="referenzen" id="referenzen">
+      <div className="referenzen" id="referenzen" style={{marginTop:'60px'}}>
         <h3 style={{ textAlign: 'center' }}>Unsere Referenzen</h3>
   
         {isMobile && (
