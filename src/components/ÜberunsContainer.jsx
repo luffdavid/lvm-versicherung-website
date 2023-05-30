@@ -4,7 +4,7 @@ import React from 'react'
 const ÜberunsContainer = () => {
     const isMobile = useMediaQuery('(max-width: 768px)');
     return (
-        <div style={{marginTop:'80px'}}>
+        <div style={{marginTop:'80px'}} id='überuns'>
         {isMobile && (
             <div style={{textAlign:'center', width:'80%', marginLeft:'10%', marginRight:'10%'}}>
             <div>

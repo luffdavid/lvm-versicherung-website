@@ -62,7 +62,7 @@ const Navbar = () => {
             <img src={logo} alt="Logo" />
           </div>
           <div className="contact-button">
-            <Button style={{color:'black', border: '1px solid black' }}  endIcon={<MailOutlineIcon />}>Jetzt in Kontakt treten  </Button>
+            <Button style={{color:'black', border: '1px solid black' }}  endIcon={<MailOutlineIcon />}><a href="#kontakt" style={{textDecoration:'none', color:'black'}}>Jetzt in Kontakt treten</a></Button>
           </div>
         </React.Fragment>
       )}

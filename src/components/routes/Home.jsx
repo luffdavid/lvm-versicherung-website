@@ -6,16 +6,18 @@ import TeamContainer from '../TeamContainer';
 import BewerbungsContainer from '../BewerbungsContainer';
 import ÜberunsContainer from '../ÜberunsContainer';
 import RezensionenContainer from '../RezensionenContainer';
+import EndContainer from '../EndContainer';
 const Home = () => {
   return (
     <div>
-        {/* <StartContainer /> */}
+        <StartContainer />
         <ContactContainer />
         <ReferencesContainer />
         <TeamContainer />
         <BewerbungsContainer />
         <ÜberunsContainer />
         <RezensionenContainer />
+        <EndContainer />
     </div>
   )
 }

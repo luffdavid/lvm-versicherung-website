@@ -4,7 +4,7 @@ const TeamContainer = () => {
   return (
     <div className='team' id='team'>
 
-        <div style={{textAlign:'center'}}>
+        <div style={{textAlign:'center'}} id='team'>
         <h2>Das sind wir</h2>
         <h3>Unsere #Team</h3>
         </div>
