@@ -1,5 +1,5 @@
 import React from 'react'
-import backgroundImage from '../assets/LVM_HB_Team_2023_v5.jpg'
+import backgroundImage from '../../assets/LVM_HB_Team_2023_v5.jpg'
 import { useMediaQuery } from '@react-hook/media-query';
 import { Link } from 'react-router-dom';
 const BewerbungsContainer = () => {

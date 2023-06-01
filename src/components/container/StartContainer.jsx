@@ -1,9 +1,9 @@
 import React from 'react';
-import startPicture from '../assets/startbild.jpg';
+import startPicture from '../../assets/startbild.jpg';
 import { Button } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useMediaQuery } from '@react-hook/media-query';
-import startPictureMobile from '../assets/startbildMobile.jpg';
+import startPictureMobile from '../../assets/startbildMobile.jpg';
 
 const DivContainer = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -14,8 +14,8 @@ const DivContainer = () => {
 
 
       {/* Headline */}
-      <div style={{ fontStyle:'normal', fontSize: '2rem',position: 'absolute', top: '30%', left: '25%', transform: 'translate(-50%, -50%)', display: 'flex', alignItems: 'center' }}>
-        <div>
+      <div style={{ fontStyle:'normal', fontSize: '2rem',position: 'absolute', top: '39%', left: '25%', transform: 'translate(-50%, -50%)', display: 'flex', alignItems: 'center' }}>
+        <div style={{marginLeft:'40px'}}>
           <h2>Wir sind <span style={{color:'green'}}>für Sie da</span> <br />
           wenn es darauf <br />
           ankommt. 

@@ -1,12 +1,12 @@
 import React from 'react'
-import ContactContainer from '../ContactContainer';
-import StartContainer from '../StartContainer';
-import ReferencesContainer from '../ReferencesContainer';
-import TeamContainer from '../TeamContainer';
-import BewerbungsContainer from '../BewerbungsContainer';
-import ÜberunsContainer from '../ÜberunsContainer';
-import RezensionenContainer from '../RezensionenContainer';
-import EndContainer from '../EndContainer';
+import ContactContainer from '../container/ContactContainer';
+import StartContainer from '../container/StartContainer';
+import ReferencesContainer from '../container/ReferencesContainer';
+import TeamContainer from '../container/TeamContainer';
+import BewerbungsContainer from '../container/BewerbungsContainer';
+import ÜberunsContainer from '../container/ÜberunsContainer';
+import RezensionenContainer from '../container/RezensionenContainer';
+
 const Home = () => {
   return (
     <div>
@@ -17,7 +17,6 @@ const Home = () => {
         <BewerbungsContainer />
         <ÜberunsContainer />
         <RezensionenContainer />
-        <EndContainer />
     </div>
   )
 }

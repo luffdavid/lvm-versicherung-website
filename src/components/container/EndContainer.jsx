@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../assets/logo.png';
-import novabitlogo from '../assets/novabit-black.png'
-import ssl from '../assets/SSL-certificate-image.png'
+import logo from '../../assets/logo.png';
+import novabitlogo from '../../assets/novabit-black.png'
+import ssl from '../../assets/SSL-certificate-image.png'
 import { useMediaQuery } from '@react-hook/media-query';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -91,7 +91,7 @@ const Footer = () => {
         </div>
       </section>
       <section style={sectionStyles}>
-        <img src={ssl} />
+        <img src={ssl} width={'50%'}/>
       </section>
 
     </footer>

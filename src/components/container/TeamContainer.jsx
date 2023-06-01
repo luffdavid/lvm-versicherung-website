@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import './team.css'
+import '../team.css'
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 
 import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 
-import mitarbeiter3 from '../assets/Mitarbeiter3.png'
+import mitarbeiter3 from '../../assets/Mitarbeiter3.png'
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 
 function App() {

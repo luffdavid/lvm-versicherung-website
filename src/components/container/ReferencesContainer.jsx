@@ -1,12 +1,12 @@
 import React from 'react'
 import { useMediaQuery } from '@react-hook/media-query';
-import referenz1 from '../assets/Referenz_1.png'
-import referenz2 from '../assets/Referenz_2.png'
-import referenz3 from '../assets/Referenz_4.png'
-import referenz4 from '../assets/Referenz_5.png'
+import referenz1 from '../../assets/Referenz_1.png'
+import referenz2 from '../../assets/Referenz_2.png'
+import referenz3 from '../../assets/Referenz_4.png'
+import referenz4 from '../../assets/Referenz_5.png'
 
 const ReferencesContainer = () => {
-    const isMobile = useMediaQuery('(max-width: 768px)');
+    const isMobile = useMediaQuery('(max-width: 900px)');
   
     const containerStylesMobile = {
       backgroundColor: "white",
