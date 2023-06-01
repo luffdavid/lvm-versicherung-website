@@ -8,13 +8,7 @@ import 'swiper/css/navigation';
 
 import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 
-import slide_image_1 from '../assets/Google_2015_logosvg.png';
-import slide_image_2 from '../assets/Annotation 2023-05-27 194945.png';
-import slide_image_3 from '../assets/LVM-mitarbeiter2-ohne-hintergrund.png';
-import slide_image_4 from '../assets/Referenz_1.png';
-import slide_image_5 from '../assets/SSL-certificate-image.png';
-import slide_image_6 from '../assets/LVM_HB_Team_2023_v5.jpg';
-import slide_image_7 from '../assets/novabit-black.png';
+import mitarbeiter3 from '../assets/Mitarbeiter3.png'
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 
 function App() {
@@ -44,33 +38,29 @@ function App() {
         className="swiper_container"
       >
         <SwiperSlide >
-          <div style={{height:'300px', width:'200px', backgroundColor:'green'}}>
-sdasdsa
+          <div style={{height:'300px', width:'200px', backgroundColor:'blue'}}>
+
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div style={{height:'300px', width:'200px', backgroundColor:'green'}}>
-sdasdsa
+          <div style={{height:'300px', width:'200px', backgroundColor:'blue'}}>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div style={{height:'300px', width:'200px', backgroundColor:'green'}}>
-sdasdsa
+          <div style={{height:'300px', width:'200px', backgroundColor:'blue'}}>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div style={{height:'300px', width:'200px', backgroundColor:'green'}}>
-sdasdsa
+          <div style={{height:'300px', width:'200px', backgroundColor:'blue'}}>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div style={{height:'300px', width:'200px', backgroundColor:'green'}}>
-sdasdsa
+          <div style={{height:'300px', width:'200px', backgroundColor:'blue'}}>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div style={{height:'300px', width:'200px', backgroundColor:'green'}}>
-sdasdsa
+          <div style={{height:'300px', width:'200px', backgroundColor:'blue'}}>
+
           </div>
         </SwiperSlide>
 

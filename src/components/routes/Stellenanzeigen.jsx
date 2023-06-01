@@ -38,7 +38,7 @@ const containerStyles = {
   marginLeft:'8%',
   marginRight:'20%',
   marginBottom:'5%',
-  backgroundColor: 'green',
+  backgroundColor: 'red',
 };
 const containerStylesMobile = {
   // display: 'flex',
@@ -69,7 +69,7 @@ const leftDivStyles = {
 
 const rightDivStyles = {
   width: '30%',
-  height: '100%',
+  height: 'auto',
   backgroundColor: 'green',
   color:'white',
   paddingLeft:'10px',
