@@ -44,8 +44,8 @@ const ReferencesContainer = () => {
         margin: "0 70px", // Festlegen des Abstands zwischen den Bildern
       };
         return (
-      <div className="referenzen" id="referenzen" style={{marginTop:'60px'}}>
-        <h3 style={{ textAlign: 'center' }}>Unsere Referenzen</h3>
+      <div className="referenzen" id="referenzen" style={{marginTop:'100px'}}>
+        <h1 style={{ textAlign: 'center' }}>Unsere Referenzen</h1>
   
         {isMobile && (
           <div style={containerStylesMobile}>

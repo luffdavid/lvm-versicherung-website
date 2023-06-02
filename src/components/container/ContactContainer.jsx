@@ -90,17 +90,17 @@ const ContactIcons = () => {
   const [is1Open,setIs1Open] =useState(false);
   const [isWirRufenAn,setIsWirRufenAn] =useState(false);
   const [phoneNumber, setPhoneNumber] = useState('')
-  const[isVielenDank, setIsVielenDank] = useState(false);
+  const [isVielenDank, setIsVielenDank] = useState(false);
   const [canCall, setCanCall] = useState(false);
   const [isStartTermin, setIsStartTermin] = useState(true);
-  const[is1TerminOpen, setIs1TerminOpen] = useState(false);
-const [isTagundUhrzeit, setIsTagundUhrzeit] = useState(false);
-const [uhrzeit, setUhrzeit] = useState(''); 
-const [day, setDay] = useState(''); 
-const [vorUndNachname, setVorundNachname] = useState('');
-const [emailAdresse, setEmailAdresse] = useState('');
-const [telefonnummer, setTelefonnummer] = useState('')
-const [isTerminauswahl2, setIsTerminauswahl2] = useState('');
+  const [is1TerminOpen, setIs1TerminOpen] = useState(false);
+  const [isTagundUhrzeit, setIsTagundUhrzeit] = useState(false);
+  const [uhrzeit, setUhrzeit] = useState(''); 
+  const [day, setDay] = useState(''); 
+  const [vorUndNachname, setVorundNachname] = useState('');
+  const [emailAdresse, setEmailAdresse] = useState('');
+  const [telefonnummer, setTelefonnummer] = useState('')
+  const [isTerminauswahl2, setIsTerminauswahl2] = useState('');
 
 const LVMNumber = '+49 (0)421 1651670';
   useEffect(() => {
@@ -187,7 +187,7 @@ setIsVielenDank(true)
   
   return (  
     <div className="kontakt" id="kontakt" >
-      <h3 style={{textAlign:'center'}}>Was möchten Sie tun?</h3>
+      <h1 style={{textAlign:'center'}}>Was möchten Sie tun?</h1>
 {isMobile && (
   <div>
      <Box sx={containerStylesMobile}>
@@ -388,7 +388,7 @@ setIsVielenDank(true)
             <div>
               <span><h4>Damit wir Sie erreichen </h4></span>
               <span>
-              <form onSubmit={sendEmailWithTelefonNummer}>
+
                 <Input
                 type="text"
                 required
@@ -396,9 +396,8 @@ setIsVielenDank(true)
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 /> <br /> <br />
-                <Button type="submit" variant="contained" color="success">Weiter</Button>
+                <Button onClick={sendEmailWithTelefonNummer} variant="contained" color="success">Weiter</Button>
                 <br />
-              </form>
               </span>
             </div>
          </Box>

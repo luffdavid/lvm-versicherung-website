@@ -1,10 +1,12 @@
 import { useMediaQuery } from '@react-hook/media-query';
 import {React,useState} from 'react';
-import picture from '../../assets/LVM-mitarbeiter1-ohne-hintergrund.png'
-import picture2 from '../../assets/LVM-mitarbeiter2-ohne-hintergrund.png'
-import picture3 from '../../assets/LVM-mitarbeiter3-ohne-hintergrund.png'
+import pictureLink from '../../assets/LVM-mitarbeiter1-ohne-hintergrund.png'
+import pictureLink2 from '../../assets/LVM-mitarbeiter2-ohne-hintergrund.png'
+import pictureLink3 from '../../assets/LVM-mitarbeiter3-ohne-hintergrund.png'
 import zIndex from '@mui/material/styles/zIndex';
 import { Button } from '@mui/material';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const TeamContainer = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -12,66 +14,78 @@ const TeamContainer = () => {
 
   const pictureData = [
     {
-      name: 'Dummy Name 1',
-      telefon: '123-456-01',
-      email: 'dummy1@example.com',
-      pictureLink: picture
+      name: 'Danny Ranft',
+      telefon: '+49 (0)421 1651670',
+      email: 'd.ranft@agentur.lvm.de',
+      pictureLink: pictureLink
     },
     {
-      name: 'Dummy Name 2',
-      telefon: '123-456-02',
-      email: 'dummy2@example.com',
-      pictureLink: picture2
+      name: 'Dennis Voitle',
+      telefon: '+49 (0)421 1651670',
+      email: 'd.voitle@ranft.lvm.de',
+      pictureLink: pictureLink2
     },
     {
-      name: 'Dummy Name 3',
-      telefon: '123-456-03',
-      email: 'dummy3@example.com',
-      pictureLink: picture3
+      name: 'Jan-Marc-Czerwinski',
+      telefon: '+49 (0)421 1651670',
+      email: 'j.czerwinski@ranft.lvm.de',
+      pictureLink: pictureLink3
     },
     {
-      name: 'Dummy Name 4',
-      telefon: '123-456-04',
-      email: 'dummy4@example.com',
-      pictureLink: picture
+      name: 'Marc Müller',
+      telefon: '+49 (0)421 1651670',
+      email: 'm.müller@ranft.lvm.de',
+      pictureLink: pictureLink
     },
     {
-      name: 'Dummy Name 5',
-      telefon: '123-456-05',
-      email: 'dummy5@example.com',
-      pictureLink: picture2
+      name: 'Julian Dede',
+      telefon: '+49 (0)421 1651670',
+      email: 'j.dede@ranft.lvm.de',
+      pictureLink: pictureLink2
     },
     {
-      name: 'Dummy Name 6',
-      telefon: '123-456-06',
-      email: 'dummy6@example.com',
-      pictureLink: picture3
+      name: 'Aliyah Elmali',
+      telefon: '+49 (0)421 1651670',
+      email: 'a.elmali@ranft.lvm.de',
+      pictureLink: pictureLink3
     },
     {
-      name: 'Dummy Name 7',
-      telefon: '123-456-07',
-      email: 'dummy7@example.com',
-      pictureLink: picture
+      name: 'Antje Krause',
+      telefon: '+49 (0)421 1651670',
+      email: 'a.krause@ranft.lvm.de',
+      pictureLink: pictureLink
     },
     {
-      name: 'Dummy Name 8',
-      telefon: '123-456-08',
-      email: 'dummy8@example.com',
-      pictureLink: picture2
+      name: 'Daniel Bölke',
+      telefon: '+49 (0)421 1651670',
+      email: 'd.boeckle@ranft.lvm.de',
+      pictureLink: pictureLink2
     },
     {
-      name: 'Dummy Name 9',
-      telefon: '123-456-09',
-      email: 'dummy9@example.com',
-      pictureLink: picture2
+      name: 'Susanne Kremer',
+      telefon: '+49 (0)421 1651670',
+      email: 's.kremer@ranft.lvm.de',
+      pictureLink: pictureLink2
     },
     {
-      name: 'Dummy Name 10',
-      telefon: '123-456-10',
-      email: 'dummy10@example.com',
-      pictureLink: picture3
+      name: 'Christia Achilles',
+      telefon: '+49 (0)421 1651670',
+      email: 'c.achilles@ranft.lvm.de',
+      pictureLink: pictureLink3
+    },
+    {
+      name: 'Peter Borchers',
+      telefon: '+49 (0)421 1651670',
+      email: 'p.borchers@ranft.lvm.de',
+      pictureLink: pictureLink
+    },
+    {
+      name: 'Natalie Ebel',
+      telefon: '+49 (0)421 1651670',
+      email: 'n.ebel@ranft.lvm.de',
+      pictureLink: pictureLink2
     }
-  ];  
+  ];
 
  
 
@@ -120,16 +134,9 @@ const handleNextClick = () => {
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
-    marginTop: '50px',
+    // marginTop: '10px',
   };
 
-  const containerStylesMobile = {
-
-    width: '100%',
-    height: '50%',
-    textAlign: 'center',
-    marginTop:'10%',
-  };
   const bildDiv = {
     backgroundColor:'green',
    zIndex:2,
@@ -137,7 +144,7 @@ const handleNextClick = () => {
     border: '1px solid black',
     borderRadius: '10px',
     height: '340px',
-    width: '190px',
+    width: '220px',
     opacity: '0.9',
     marginRight:'15px'
   };
@@ -148,7 +155,7 @@ const handleNextClick = () => {
     border: '1px solid white',
     backgroundColor: 'white',
     color: 'black',
-    width: '190px',
+    width: '220px',
     height: '150px',
     position: 'absolute',
     bottom: '3%',
@@ -159,9 +166,9 @@ const handleNextClick = () => {
   }
 
   return (
-    <div className="container">
-      <h3 style={{textAlign:'center'}}  id='team'>Das sind wir</h3>
-      <h4 style={{textAlign:'center'}}>Unser #Team</h4>
+    <div style={{marginTop:'10%'}}>
+      <h1 style={{textAlign:'center'}}  id='team'>Das sind wir</h1>
+      <h2 style={{textAlign:'center'}}>Unser #Team</h2>
      
 
      <div>
@@ -179,20 +186,17 @@ const handleNextClick = () => {
       <div style={{textAlign:'center', marginTop:'20px'}}>
         <span><h5>{pictureData.name}</h5></span>
         <span><hr style={{width:'20%'}} /></span>
-        <span>{pictureData.telefon}</span>
-        <span>{pictureData.email}</span>
+        <p style={{fontSize: '14px' }}>{pictureData.telefon}</p>
+        <p style={{fontSize: '14px' }}>{pictureData.email}</p>
       </div>
     </div>
     </div>
   </div>
-))}
-<br />
-
-        
+))}        
       </div>
       <div style={{textAlign:'center'}}>
-        <Button onClick={handlePrevClick}>Vorherige</Button>
-        <Button onClick={handleNextClick}>Nächste</Button>
+        <Button onClick={handlePrevClick}><ArrowBackIosIcon /></Button>
+        <Button onClick={handleNextClick}><ArrowForwardIosIcon /></Button>
       </div> 
      </div>
     </div>

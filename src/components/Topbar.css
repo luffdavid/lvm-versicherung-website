@@ -43,6 +43,7 @@ nav {
   }
   .menu-icon {
     text-align: right;
+    right:0
   }
 .links-mobile {
     display: flex;

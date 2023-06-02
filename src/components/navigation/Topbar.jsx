@@ -24,7 +24,8 @@ const Navbar = () => {
           </div>
           <div className="menu-icon" onClick={handleMenuToggle}>
            {isMenuOpen ? (
-            <CloseIcon />
+           <div style ={{position: 'absolute', top: '30px', right: '10px' }}><CloseIcon /></div>
+           
            )
             : 
            (

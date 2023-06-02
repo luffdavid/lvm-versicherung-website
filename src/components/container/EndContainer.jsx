@@ -96,7 +96,7 @@ const Footer = () => {
 
     </footer>
     <div style={{textAlign:'center',width:'20%',borderRadius: '0 20px 10px 0', backgroundColor: 'white', padding: '10px', color:'black'}}>
-      Social Media: <a style={{color:'black'}} href="https://www.instagram.com/lvm_ranft_bremen/?hl=de"><InstagramIcon /></a> <a style={{color:'black'}} href="https://www.instagram.com/lvm_ranft_bremen/?hl=de"><FacebookIcon /></a>
+      Social Media: <a style={{color:'black'}} href="https://www.instagram.com/lvm_ranft_bremen/?hl=de"><InstagramIcon /></a> <a style={{color:'black'}} href="https://www.facebook.com/lvmranftbremen/?locale=de_DE"><FacebookIcon /></a>
 </div> <hr />
 
 <div>

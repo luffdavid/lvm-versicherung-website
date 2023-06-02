@@ -5,9 +5,13 @@ import StarIcon from '@mui/icons-material/Star';
 import { useMediaQuery } from '@react-hook/media-query';
 import { Google } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import { Button, CircularProgress } from '@mui/material';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const RezensionenContainer = () => {
    const [rezensionen, setRezensionen] = useState([]);
+   const [isLoading, setIsLoading] = useState(true);
    const isMobile = useMediaQuery('(max-width: 768px)');
   useEffect(() => {
     fetchRezensionen();
@@ -19,7 +23,9 @@ const RezensionenContainer = () => {
     const data = await response.json();
     setRezensionen(data);
     console.log(data)
+    setIsLoading(false);
   } catch (error) {
+    
     console.error('Fehler beim Abrufen der Rezensionen:', error);
   }
 };
@@ -91,10 +97,22 @@ const RezensionenContainer = () => {
   const visibleRezensionen = rezensionen.slice(currentIndex, currentIndex + 3);
 
   return (
+
     !isMobile ? (
 
     
     <div style={{ backgroundColor: 'white' }} id="rezensionen">
+     <div style={{marginLeft:'10%', paddingTop:'10%'}}>
+     <img src={google} width={"10%"} /> <br />
+      <span style={{fontSize:'32px', fontWeight:'bold'}}>Rezensionen</span> 
+     </div>
+
+   {isLoading ? (
+    <div style={{ textAlign: 'center' }}>
+          <CircularProgress /> <br />
+          Rezensionen werden abgerufen...
+        </div>
+   ) : (
       <div style={containerStyles}>
         {visibleRezensionen.map((rezension, index) => (
           <div style={rezensionenDiv} key={index}>
@@ -102,11 +120,11 @@ const RezensionenContainer = () => {
               <span><h5>{rezension.name}</h5></span>
               <span>
                {/* 5 Sterne als Icons nebeneinander */}
-                  <StarIcon  style={{ color: 'gold' }} /> 
-                  <StarIcon  style={{ color: 'gold' }} /> 
-                  <StarIcon  style={{ color: 'gold' }} /> 
-                  <StarIcon  style={{ color: 'gold' }} /> 
-                  <StarIcon  style={{ color: 'gold' }} /> 
+                  <StarIcon  style={{ color: 'orange' }} /> 
+                  <StarIcon  style={{ color: 'orange' }} /> 
+                  <StarIcon  style={{ color: 'orange' }} /> 
+                  <StarIcon  style={{ color: 'orange' }} /> 
+                  <StarIcon  style={{ color: 'orange' }} /> 
               </span>
             </div>
             {/* maintext */}
@@ -118,11 +136,13 @@ const RezensionenContainer = () => {
           </div>
         ))}
       </div>
-      
+   )}
       <div style={{textAlign:'center'}}>
       <div>
-        <button onClick={handlePrevClick}>Vorherige</button>
-        <button onClick={handleNextClick}>Nächste</button>
+        <div style={{textAlign:'center'}}>
+        <Button onClick={handlePrevClick}><ArrowBackIosIcon /></Button>
+        <Button onClick={handleNextClick}><ArrowForwardIosIcon /></Button>
+      </div> 
       </div> <br />
       <Link to="https://g.page/r/Cb0aIfLIldRKEB0/review" target="_blank" rel="noopener noreferrer">
   <button
@@ -146,7 +166,7 @@ const RezensionenContainer = () => {
       e.target.style.color = 'black';
     }}
   >
-    Bewerte uns jetzt auf Google <StarIcon style={{ color: 'gold' }} fontSize="small" />
+    Bewerte uns jetzt auf Google <StarIcon style={{ color: 'orange' }} fontSize="small" />
   </button>
 </Link>
 </div>
@@ -157,27 +177,35 @@ const RezensionenContainer = () => {
         <img src={google} width={'35%'} alt='googlelogo'/> 
         <h3>Rezensionen</h3>
   <div style={containerStylesMobile }>
+
+  {isLoading ? (
+    <div style={{ textAlign: 'center' }}>
+          <CircularProgress /> <br />
+          Rezensionen werden abgerufen...
+        </div>
+   ) : (
+    <div>
     {visibleRezensionen.slice(0, 2).map((rezension, index) => (
       <>
       <div style={rezensionenDivMobile} key={index}>
-        <div style={{ }}>
+        <div>
           <span><h5>{rezension.name}</h5></span>
           <span>
             {/* 5 Sterne als Icons nebeneinander */}
-            <StarIcon style={{ color: 'gold' }} />
-            <StarIcon style={{ color: 'gold' }} />
-            <StarIcon style={{ color: 'gold' }} />
-            <StarIcon style={{ color: 'gold' }} />
-            <StarIcon style={{ color: 'gold' }} />
+            <StarIcon style={{ color: 'orange' }} />
+            <StarIcon style={{ color: 'orange' }} />
+            <StarIcon style={{ color: 'orange' }} />
+            <StarIcon style={{ color: 'orange' }} />
+            <StarIcon style={{ color: 'orange' }} />
           </span>
         </div> 
         {/* maintext */}
         <div style={{ textAlign: 'left' }}>{rezension.text}</div>
       </div> <br />
-
-
-     </> 
-    ))}
+      </>
+     ))}
+      </div>
+   )}
     <Link to="https://g.page/r/Cb0aIfLIldRKEB0/review" target="_blank" rel="noopener noreferrer">
   <button
     style={{
@@ -200,7 +228,7 @@ const RezensionenContainer = () => {
       e.target.style.color = 'black';
     }}
   >
-    Bewerte uns jetzt auf Google <StarIcon style={{ color: 'gold' }} fontSize="small" />
+    Bewerte uns jetzt auf Google <StarIcon style={{ color: 'orange' }} fontSize="small" />
   </button>
 </Link>
   </div>
