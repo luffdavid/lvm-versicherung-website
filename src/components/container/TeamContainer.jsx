@@ -43,7 +43,15 @@ function App() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div style={{height:'300px', width:'200px', backgroundColor:'blue'}}>
+          <div style={{height:'300px', width:'200px', backgroundColor:'red'}}>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div style={{height:'300px', width:'200px', backgroundColor:'green'}}>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div style={{height:'300px', width:'200px', backgroundColor:'black'}}>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -51,15 +59,7 @@ function App() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div style={{height:'300px', width:'200px', backgroundColor:'blue'}}>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div style={{height:'300px', width:'200px', backgroundColor:'blue'}}>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div style={{height:'300px', width:'200px', backgroundColor:'blue'}}>
+          <div style={{height:'300px', width:'200px', backgroundColor:'green'}}>
 
           </div>
         </SwiperSlide>

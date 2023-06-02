@@ -30,7 +30,7 @@ setStellenanzeigen(data);
 
 
 const containerStyles = {
-  display: 'flex',
+ display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   height: 'auto',
@@ -38,7 +38,11 @@ const containerStyles = {
   marginLeft:'8%',
   marginRight:'20%',
   marginBottom:'5%',
-  backgroundColor: 'red',
+  backgroundColor: 'green',
+  paddingTop: 0,
+  paddingRight: 15,
+  paddingLeft: 0,
+  paddingBottom:0 
 };
 const containerStylesMobile = {
   // display: 'flex',
@@ -50,6 +54,10 @@ const containerStylesMobile = {
   marginRight:'10%',
   marginBottom:'5%',
   backgroundColor: 'white',
+  paddingTop: 0,
+  paddingRight: 0,
+  paddingLeft: 0,
+  paddingBottom:0 
 };
 const bottomContainerStylesMobile = {
   backgroundColor: 'green',
@@ -69,15 +77,16 @@ const leftDivStyles = {
 
 const rightDivStyles = {
   width: '30%',
-  height: 'auto',
+  height: '100%',
   backgroundColor: 'green',
   color:'white',
-  paddingLeft:'10px',
-  paddingBottom:'30px'
+  paddingLeft:'5%',
+   paddingBottom:'15%'
 };
 const buttonStyle = {
  backgroundColor:'white',
  padding:'7px',
+ marginTop:'5%',
  borderRadius:'15px',
  width:'180px',
  height:'35px',
@@ -112,7 +121,7 @@ const handleBewerbung = () => {
     )}
 
 {isLoading && (
-      <div style={{textAlign:'center'}}>
+      <div style={{textAlign:'center', marginBottom:'30%'}}>
         <div className="loading" style={{display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
@@ -163,7 +172,7 @@ const handleBewerbung = () => {
     )}
 
 {isLoading && (
-      <div style={{textAlign:'center'}}>
+      <div style={{textAlign:'center', marginBottom:'30%'}}>
         <div className="loading" style={{display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
