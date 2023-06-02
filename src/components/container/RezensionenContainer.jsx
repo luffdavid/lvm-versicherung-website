@@ -15,7 +15,7 @@ const RezensionenContainer = () => {
  //GET Rezensionen
  const fetchRezensionen = async () => {
   try {
-    const response = await fetch('http://localhost:5000/rezensionen');
+    const response = await fetch('https://lvmranft-api-1x2-dayys3.onrender.com/rezensionen');
     const data = await response.json();
     setRezensionen(data);
     console.log(data)

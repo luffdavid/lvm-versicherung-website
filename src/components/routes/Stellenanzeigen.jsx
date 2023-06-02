@@ -17,7 +17,7 @@ const Stellenanzeigen = () => {
  //GET Stellenanzeigen
  const fetchStellenanzeigen = async () => {
   try {
-    const response = await fetch('http://localhost:5000/stellenanzeigen');
+    const response = await fetch('https://lvmranft-api-1x2-dayys3.onrender.com/stellenanzeigen');
     const data = await response.json();
 setStellenanzeigen(data);
 
