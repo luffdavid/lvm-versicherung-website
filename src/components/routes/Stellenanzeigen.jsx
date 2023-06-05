@@ -66,7 +66,8 @@ const bottomContainerStylesMobile = {
   paddingBottom:'30px',
   height:'auto',
   width:'100%',
-  textAlign:'center'
+  textAlign:'center',
+  paddingTop:'5%'
 };
 const leftDivStyles = {
   paddingLeft:'30px',
@@ -107,8 +108,6 @@ const handleBewerbung = () => {
 
   
   return (
-    
-    
   <div style={{marginTop:'10vh'}}>
   
 {isMobile && (
