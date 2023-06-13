@@ -36,13 +36,13 @@ const RezensionenContainer = () => {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     width: '100%',
-    height: '500px',
+    height: '350px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
     opacity: '0.6',
-    marginTop: '50px',
+    marginTop: '0px',
   };
 
   const containerStylesMobile = {
@@ -99,11 +99,9 @@ const RezensionenContainer = () => {
   return (
 
     !isMobile ? (
-
-    
     <div style={{ backgroundColor: 'white' }} id="rezensionen">
-     <div style={{marginLeft:'10%', paddingTop:'10%'}}>
-     <img src={google} width={"10%"} /> <br />
+     <div style={{marginLeft:'10%', paddingTop:'2%'}}>
+     <img src={google} width={"6%"} /> <br />
       <span style={{fontSize:'32px', fontWeight:'bold'}}>Rezensionen</span> 
      </div>
 
@@ -147,7 +145,7 @@ const RezensionenContainer = () => {
       <Link to="https://g.page/r/Cb0aIfLIldRKEB0/review" target="_blank" rel="noopener noreferrer">
   <button
     style={{
-      marginBottom: '5%',
+      marginBottom: '2%',
       backgroundColor: 'lightgray',
       padding: '3px',
       width: '250px',

@@ -36,11 +36,11 @@ const Navbar = () => {
             <div>
             <ul className="links-mobile"onClick={handleMenuToggle}>
               <li><a href="/">Start</a></li>
-              <li><a href="#kontakt">Kontakt</a></li>
-              <li><a href="#referenzen">Referenzen</a></li>
-              <li><a href="#überuns">Über uns</a></li>
+              <li><a href="/#kontakt">Kontakt</a></li>
+              <li><a href="/#referenzen">Referenzen</a></li>
+              <li><a href="/#überuns">Über uns</a></li>
               <li><a href="/stellenanzeigen">Stellenanzeigen</a></li>
-              <li><a href="#rezensionen">Rezensionen</a></li>
+              <li><a href="/#rezensionen">Rezensionen</a></li>
              <br /> <br />
              <li>Weitere Links:</li>
              <li><a href="/impressum">Impressum</a></li>
@@ -55,9 +55,9 @@ const Navbar = () => {
         <React.Fragment>
           <ul className="links">
             <li><a href="/">Start</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-            <li><a href="#überuns">Über uns</a></li>
-            <li><a href="#rezensionen">Rezensionen</a></li>
+            <li><a href="/#kontakt">Kontakt</a></li>
+            <li><a href="/#überuns">Über uns</a></li>
+            <li><a href="/#rezensionen">Rezensionen</a></li>
           </ul>
           <div className="logo">
             <img src={logo} alt="Logo" />

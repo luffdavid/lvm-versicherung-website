@@ -5,15 +5,14 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import { useMediaQuery } from '@react-hook/media-query';
-import { Button, Input } from "@mui/material";
+import { Button, FormControl, Input, InputLabel } from "@mui/material";
 
-
+//Styles
 const containerStyles = {
   display: "flex",
   justifyContent: "center",
   gap: "32px",
 };
-
 const containerStylesMobile = {
   display: "flex",
   flexDirection: "column", // Neu: Container werden untereinander angeordnet
@@ -21,11 +20,11 @@ const containerStylesMobile = {
   alignItems: "center",
   gap: "32px",
 };
-
-
 const contactDivStyles = {
-  width: "150px",
-  height: "200px",
+  // width: "150px",
+  // height: "200px",
+  width: "230px",
+  height: "280px",
   borderRadius: "19px",
   backgroundColor: "white",
   display: "flex",
@@ -38,7 +37,6 @@ const contactDivStyles = {
     backgroundColor: '#00B200',
   },
 };
-
 const contactDivStylesMobile = {
   width: "150px",
   height: "200px",
@@ -54,8 +52,6 @@ const contactDivStylesMobile = {
     backgroundColor: "#00B200",
   },
 };
-
-
 const contact1Style = {
   width: "150px",
   height:  "60px",
@@ -84,7 +80,9 @@ const contact1StyleDisabled = {
   color:'lightgrey',
   };
 
+
 const ContactIcons = () => {
+  //useStates
   const isMobile = useMediaQuery('(max-width: 768px)');
   const [isStart,setIsStart] =useState(true);
   const [is1Open,setIs1Open] =useState(false);
@@ -101,8 +99,9 @@ const ContactIcons = () => {
   const [emailAdresse, setEmailAdresse] = useState('');
   const [telefonnummer, setTelefonnummer] = useState('')
   const [isTerminauswahl2, setIsTerminauswahl2] = useState('');
-
-const LVMNumber = '+49 (0)421 1651670';
+  const LVMNumber = '+49 (0)421 1651670';
+  
+  //can call? -> Prüfung ob Gerät anrufFunktion hat
   useEffect(() => {
     setCanCall(!!navigator.userAgent.match(/Android|iPhone|iPad|iPod/i));
   }, []);
@@ -115,10 +114,11 @@ const LVMNumber = '+49 (0)421 1651670';
   };
 
   const handleClick1 = () => {
-    setIsStart(false);
+      setIsStart(false);
       setIs1Open(true);
   }
   const handleWirRufenSieAn = () => {
+    setIsStart(false);
 setIsWirRufenAn(true);
 setIs1Open(false);
   }
@@ -451,20 +451,26 @@ setIsVielenDank(true)
             <span><h4>Terminauswahl</h4></span>
             <span>
             <form onSubmit={handleTerminauswahl2}>
-              <Input
-              type="date"
-              required
-              placeholder="Gewünschter Tag"
-              value={day}
-              onChange={(e) => setDay(e.target.value)}
-              />
-              <Input
-              type="text"
-              required
-              placeholder="Gewünschte Uhrzeit"
-              value={uhrzeit}
-              onChange={(e) => setUhrzeit(e.target.value)}
-              /> <br /> <br />
+
+            <p><label htmlFor="gewuenschter-tag">Gewünschter Tag</label>
+  <Input
+    id="gewuenschter-tag"
+    type="date"
+    required
+    placeholder="none"
+    value={day}
+    onChange={(e) => setDay(e.target.value)}
+  /></p>
+
+<p><label htmlFor="gewuenschte-uhrzeit">Gewünschte Uhrzeit</label>
+  <Input
+    id="gewuenschte-uhrzeit"
+    type="text"
+    required
+    // placeholder="Gewünschte Uhrzeit"
+    value={uhrzeit}
+    onChange={(e) => setUhrzeit(e.target.value)}
+  /></p> 
               <Button type="submit" variant="contained" color="success">Weiter</Button>
               <br />
             </form>
