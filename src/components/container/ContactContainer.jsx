@@ -53,8 +53,8 @@ const contactDivStylesMobile = {
   },
 };
 const contact1Style = {
-  width: "150px",
-  height:  "60px",
+  width: "200px",
+  height:  "100px",
   borderRadius: "19px",
   backgroundColor: "#00B200",
   display: "flex",
@@ -66,8 +66,8 @@ const contact1Style = {
   color:'white',
   };
 const contact1StyleDisabled = {
-  width: "150px",
-  height:  "60px",
+  width: "200px",
+  height:  "100px",
   borderRadius: "19px",
   backgroundColor: "#00B200",
   opacity:'0.6',
@@ -194,10 +194,10 @@ setIsVielenDank(true)
       {/* div 1 */}
       {isStart && (
            <Box sx={contactDivStyles} onClick={handleClick1}>
-           <span style={{ alignSelf: 'flex-start',marginLeft:5, marginTop:'10px'  }}><PhoneOutlinedIcon /></span>
+           <span style={{ alignSelf: 'flex-start',marginLeft:5, marginTop:'10px'  }}><PhoneOutlinedIcon fontSize="large"/></span>
            <span style={{ alignSelf: 'flex-start',marginLeft:20 }}>
-             <h4>Telefonisch kontaktieren</h4></span>
-           <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon /></span>
+             <h2>Telefonisch kontaktieren</h2></span>
+           <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon fontSize="large"/></span>
          </Box>
         )}
        {is1Open && (
@@ -243,19 +243,19 @@ setIsVielenDank(true)
         )}
          {isVielenDank && (
            <Box sx={contactDivStyles} onClick={handleClick1}>
-           <span style={{ alignSelf: 'flex-start',marginLeft:5, marginTop:'10px'  }}><PhoneOutlinedIcon /></span>
+           <span style={{ alignSelf: 'flex-start',marginLeft:5, marginTop:'10px'  }}><PhoneOutlinedIcon fontSize="large"/></span>
            <span style={{ alignSelf: 'flex-start',marginLeft:20 }}>
-             <h4>Telefonisch kontaktieren</h4></span>
-           <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon /></span>
+             <h2>Telefonisch kontaktieren</h2></span>
+           <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon  fontSize="large"/></span>
          </Box>
         )}
 
         {/* div2 */}
         <Box sx={contactDivStyles} onClick={handlePerNachricht}>
-          <span style={{ alignSelf: 'flex-start', marginLeft:5, paddingTop:10  }}><EmailOutlinedIcon /></span>
+          <span style={{ alignSelf: 'flex-start', marginLeft:5, paddingTop:10  }}><EmailOutlinedIcon fontSize="large"/></span>
           <span style={{ alignSelf: 'flex-start',marginLeft:20 }}>
-            <h4>Per Nachricht kontaktieren</h4></span>
-          <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon /></span>
+            <h2>Per Nachricht kontaktieren</h2></span>
+          <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon  fontSize="large"/></span>
         </Box>
 
 
@@ -263,10 +263,10 @@ setIsVielenDank(true)
 
         {isStartTermin && (
           <Box sx={contactDivStyles} onClick={handleClickTermin1}>
-          <span style={{ alignSelf: 'flex-start',marginLeft:5, paddingTop:10  }}><CalendarMonthOutlinedIcon /></span>
+          <span style={{ alignSelf: 'flex-start',marginLeft:5, paddingTop:10  }}><CalendarMonthOutlinedIcon fontSize="large"/></span>
           <span style={{ alignSelf: 'flex-start',marginLeft:20 }}>
-            <h4>Einen Termin vereinbaren</h4></span>
-          <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon /></span>
+            <h2>Einen Termin vereinbaren</h2></span>
+          <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon fontSize="large"/></span>
         </Box>
      
         )}
@@ -285,23 +285,29 @@ setIsVielenDank(true)
         )}
         {isTagundUhrzeit && (
            <Box sx={contactDivStyles}>
-            <span><h4>Terminauswahl</h4></span>
+            <span><h2>Terminauswahl</h2></span>
             <span>
             <form onSubmit={handleTerminauswahl2}>
-              <Input
-              type="date"
-              required
-              placeholder="Gewünschter Tag"
-              value={day}
-              onChange={(e) => setDay(e.target.value)}
-              />
-              <Input
-              type="text"
-              required
-              placeholder="Gewünschte Uhrzeit"
-              value={uhrzeit}
-              onChange={(e) => setUhrzeit(e.target.value)}
-              /> <br /> <br />
+
+            <p><label htmlFor="gewuenschter-tag">Gewünschter Tag</label>
+  <Input
+    id="gewuenschter-tag"
+    type="date"
+    required
+    placeholder="none"
+    value={day}
+    onChange={(e) => setDay(e.target.value)}
+  /></p>
+
+<p><label htmlFor="gewuenschte-uhrzeit">Gewünschte Uhrzeit</label>
+  <Input
+    id="gewuenschte-uhrzeit"
+    type="text"
+    required
+    // placeholder="Gewünschte Uhrzeit"
+    value={uhrzeit}
+    onChange={(e) => setUhrzeit(e.target.value)}
+  /></p> 
               <Button type="submit" variant="contained" color="success">Weiter</Button>
               <br />
             </form>
@@ -310,34 +316,46 @@ setIsVielenDank(true)
 )}
           {isTerminauswahl2 && (
              <Box sx={contactDivStyles}>
-             <span><h4>Ihre Kontaktdaten</h4></span>
-             <span>
-             <form onSubmit={sendEmailKontaktDaten}>
-               <Input
-               type="text"
-               required
-               placeholder="Vor- und Zuname"
-               value={vorUndNachname}
-               onChange={(e) => setVorundNachname(e.target.value)}
+             <span><h3>Ihre Kontaktdaten</h3></span>
+            <span>
+            <form onSubmit={sendEmailKontaktDaten}>
+
+            {/* <p> */}
+              <label htmlFor="Vorundzuname">Vor- und Zuname</label>
+  <Input
+    id="Vorundzuname"
+    type="text"
+    required
+    placeholder="Vor- und Zuname"
+    value={vorUndNachname}
+    onChange={(e) => setVorundNachname(e.target.value)}
+  />
+  {/* </p> */}
+{/* <p> */}
+  <label htmlFor="telefonnummer">Telefonnummer</label>
+  <Input
+    id="telefonnummer"
+    type="text"
+    required
+    placeholder="Telefonnummer"
+    value={telefonnummer}
+    onChange={(e) => setTelefonnummer(e.target.value)}
+  />
+  {/* </p>  */}
+  <label htmlFor="emailadresse">Emailadresse</label>
+    <Input
+    id="emailadresse"
+    type="email"
+    required
+    placeholder="Email adresse"
+    value={emailAdresse}
+    onChange={(e) => setEmailAdresse(e.target.value)}
                />
-               <Input
-               type="text"
-               required
-               placeholder="Telefonnummer"
-               value={telefonnummer}
-               onChange={(e) => setTelefonnummer(e.target.value)}
-               />
-                <Input
-               type="email"
-               required
-               placeholder="Email adresse"
-               value={emailAdresse}
-               onChange={(e) => setEmailAdresse(e.target.value)}
-               /> <br />
-               <Button type="submit" variant="contained" color="success">Weiter</Button>
-               <br />
-             </form>
-             </span>
+                <Button type="submit" variant="contained" color="success">Weiter</Button>
+               {/* </p> */}
+              <br />
+            </form>
+            </span>
               </Box>
           )}
 
@@ -356,10 +374,10 @@ setIsVielenDank(true)
         {/* div 1 */}
         {isStart && (
            <Box sx={contactDivStyles} onClick={handleClick1}>
-           <span style={{ alignSelf: 'flex-start',marginLeft:5, marginTop:'10px'  }}><PhoneOutlinedIcon /></span>
+           <span style={{ alignSelf: 'flex-start',marginLeft:5, marginTop:'10px'  }}><PhoneOutlinedIcon fontSize="large"/></span>
            <span style={{ alignSelf: 'flex-start',marginLeft:20 }}>
-             <h4>Telefonisch kontaktieren</h4></span>
-           <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon /></span>
+             <h2>Telefonisch kontaktieren</h2></span>
+           <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon fontSize="large"/></span>
          </Box>
         )}
        {is1Open && (
@@ -404,10 +422,10 @@ setIsVielenDank(true)
         )}
          {isVielenDank && (
            <Box sx={contactDivStyles} onClick={handleClick1}>
-           <span style={{ alignSelf: 'flex-start',marginLeft:5, marginTop:'10px'  }}><PhoneOutlinedIcon /></span>
+           <span style={{ alignSelf: 'flex-start',marginLeft:5, marginTop:'10px'  }}><PhoneOutlinedIcon fontSize="large"/></span>
            <span style={{ alignSelf: 'flex-start',marginLeft:20 }}>
-             <h4>Telefonisch kontaktieren</h4></span>
-           <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon /></span>
+             <h2>Telefonisch kontaktieren</h2></span>
+           <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon fontSize="large" /></span>
          </Box>
         )}
 
@@ -415,10 +433,10 @@ setIsVielenDank(true)
 
         {/* div2 */}
         <Box sx={contactDivStyles} onClick={handlePerNachricht}>
-          <span style={{ alignSelf: 'flex-start', marginLeft:5, paddingTop:10  }}><EmailOutlinedIcon /></span>
+          <span style={{ alignSelf: 'flex-start', marginLeft:5, paddingTop:10  }}><EmailOutlinedIcon fontSize="large"/></span>
           <span style={{ alignSelf: 'flex-start',marginLeft:20 }}>
-            <h4>Per Nachricht kontaktieren</h4></span>
-          <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon /></span>
+            <h2>Per Nachricht kontaktieren</h2></span>
+          <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon fontSize="large"/></span>
         </Box>
 
 
@@ -426,10 +444,10 @@ setIsVielenDank(true)
 
         {isStartTermin && (
           <Box sx={contactDivStyles} onClick={handleClickTermin1}>
-          <span style={{ alignSelf: 'flex-start',marginLeft:5, paddingTop:10  }}><CalendarMonthOutlinedIcon /></span>
+          <span style={{ alignSelf: 'flex-start',marginLeft:5, paddingTop:10  }}><CalendarMonthOutlinedIcon fontSize="large"/></span>
           <span style={{ alignSelf: 'flex-start',marginLeft:20 }}>
-            <h4>Einen Termin vereinbaren</h4></span>
-          <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon /></span>
+            <h2>Einen Termin vereinbaren</h2></span>
+          <span style={{ alignSelf: 'flex-start' }}><ArrowForwardIcon fontSize="large"/></span>
         </Box>
      
         )}
@@ -448,7 +466,7 @@ setIsVielenDank(true)
         )}
         {isTagundUhrzeit && (
            <Box sx={contactDivStyles}>
-            <span><h4>Terminauswahl</h4></span>
+            <span><h2>Terminauswahl</h2></span>
             <span>
             <form onSubmit={handleTerminauswahl2}>
 
@@ -479,34 +497,46 @@ setIsVielenDank(true)
 )}
           {isTerminauswahl2 && (
              <Box sx={contactDivStyles}>
-             <span><h4>Ihre Kontaktdaten</h4></span>
-             <span>
-             <form onSubmit={sendEmailKontaktDaten}>
-               <Input
-               type="text"
-               required
-               placeholder="Vor- und Zuname"
-               value={vorUndNachname}
-               onChange={(e) => setVorundNachname(e.target.value)}
+                         <span><h3>Ihre Kontaktdaten</h3></span>
+            <span>
+            <form onSubmit={sendEmailKontaktDaten}>
+
+            {/* <p> */}
+              <label htmlFor="Vorundzuname">Vor- und Zuname</label>
+  <Input
+    id="Vorundzuname"
+    type="text"
+    required
+    placeholder="Vor- und Zuname"
+    value={vorUndNachname}
+    onChange={(e) => setVorundNachname(e.target.value)}
+  />
+  {/* </p> */}
+{/* <p> */}
+  <label htmlFor="telefonnummer">Telefonnummer</label>
+  <Input
+    id="telefonnummer"
+    type="text"
+    required
+    placeholder="Telefonnummer"
+    value={telefonnummer}
+    onChange={(e) => setTelefonnummer(e.target.value)}
+  />
+  {/* </p>  */}
+  <label htmlFor="emailadresse">Emailadresse</label>
+    <Input
+    id="emailadresse"
+    type="email"
+    required
+    placeholder="Email adresse"
+    value={emailAdresse}
+    onChange={(e) => setEmailAdresse(e.target.value)}
                />
-               <Input
-               type="text"
-               required
-               placeholder="Telefonnummer"
-               value={telefonnummer}
-               onChange={(e) => setTelefonnummer(e.target.value)}
-               />
-                <Input
-               type="email"
-               required
-               placeholder="Email adresse"
-               value={emailAdresse}
-               onChange={(e) => setEmailAdresse(e.target.value)}
-               /> <br />
-               <Button type="submit" variant="contained" color="success">Weiter</Button>
-               <br />
-             </form>
-             </span>
+                <Button type="submit" variant="contained" color="success">Weiter</Button>
+               {/* </p> */}
+              <br />
+            </form>
+            </span>
               </Box>
           )}
          

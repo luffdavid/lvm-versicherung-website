@@ -181,7 +181,7 @@ const handleNextClick = () => {
   }
 
   return (
-    <div style={{marginTop:'10%'}}>
+    <div style={{marginTop:'4%'}}>
       <h1 style={{textAlign:'center'}}  id='team'>Das sind wir</h1>
       <h2 style={{textAlign:'center'}}>Unser #Team</h2>
      

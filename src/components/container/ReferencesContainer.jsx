@@ -63,10 +63,10 @@ const ReferencesContainer = () => {
   {!isMobile && (
           <div style={containerStyles}>
             <img src={referenz1} alt="Image 1" style={imageStyles} />
-            <div>
+            {/* <div> */}
               <img src={referenz2} alt="Image 2" style={imageStyles} />
               <img src={referenz3} alt="Image 3" style={imageStyles} />
-            </div>
+            {/* </div> */}
             <img src={referenz4} alt="Image 4" style={imageStyles} />
           </div>
         )}
