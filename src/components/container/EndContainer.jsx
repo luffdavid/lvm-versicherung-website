@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/n_560px-LVM_Versicherung_2010__ (1).png';
 import novabitlogo from '../../assets/novabit-black.png'
 import ssl from '../../assets/SSL-certificate-image.png'
 import { useMediaQuery } from '@react-hook/media-query';
@@ -16,7 +16,7 @@ const Footer = () => {
     alignItems: 'center',
     marginLeft:'10%',
     marginRight:'10%',
-    gap:'120px'
+    gap:'120px',
   };
 
   const sectionStyles = {
@@ -63,7 +63,6 @@ const Footer = () => {
       <section style={sectionStyles}>
         <img src={logo} alt="Logo" style={logoStyles} />
         <div style={addressStyles}>
-          {/* <img src={addressIcon} alt="Address Icon" style={addressIconStyles} /> */}
           <p>
           <h4>LVM Ranft Assekuranzservice <br />
           und -vermittlung GmbH &co.KG</h4>
@@ -74,18 +73,20 @@ const Footer = () => {
         </div>
       </section>
       <section style={sectionStyles}> 
+      <p></p>
         <h3>Links</h3>
-        <a style={{color:'black', textDecoration:'none'}} href="#kontakt">Kontakt</a>
-        <a style={{color:'black', textDecoration:'none'}} href="/impressum">Impressum</a>
-        <a style={{color:'black', textDecoration:'none'}} href="/offenlegungspflicht">Offenlegungspflicht</a>
-        <a style={{color:'black', textDecoration:'none'}} href="/datenschutz">Datenschutz</a> <br /> <br />
+        <a style={{color:'black', textDecoration:'none',fontSize:'18px'}} href="#kontakt">Kontakt</a>
+        <a style={{color:'black', textDecoration:'none',fontSize:'18px'}} href="/impressum">Impressum</a>
+        <a style={{color:'black', textDecoration:'none',fontSize:'18px'}} href="/offenlegungspflicht">Offenlegungspflicht</a>
+        <a style={{color:'black', textDecoration:'none',fontSize:'18px'}} href="/datenschutz">Datenschutz</a> <br /> <br />
       </section>
       <section style={sectionStyles}>
+     <br />
         <h3>Öffnungszeiten</h3>
         <div style={openingHoursStyles}>
           {/* <img src={openingHoursIcon} alt="Opening Hours Icon" style={openingHoursIconStyles} /> */}
-          <p>Mo. - Fr.: 9:00 - 13:00 <br />
-                        14:00-17:00 <br />
+          <p style={{fontSize:'18px'}}>Mo. - Fr.: 9:00 - 13:00 <br />
+                       <div style={{textAlign:'right'}}>14:00-17:00</div>  <br />
             Sa.-So. Geschlossen
           </p>
         </div>
